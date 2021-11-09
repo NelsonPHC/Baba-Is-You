@@ -39,7 +39,7 @@ The restartLevel method is implemented when user wants to restart the level. It 
 The Window_KeyDown method detects a user input and move the objects in the game given the game rules. It ignores the user control inputs when the game has ended, or user has died already. Otherwise, it checks the user key input: R for restart of the current level, Z for undo, arrow keys for moving the player. When user inputs arrow keys, it will check collisions using checkWallCollision and checkBagCollision and move the player if there are no collisions. Whenever the player is moved, it then stores the new game state using saveState method. After each step, it checks the game situation using methods isCompleted, isDead and rockGoopCombo. Finally, update the display using update method.
 
 ## 3.	Challenges
-Moving multiple baggage objects at a time (overcome):
+Moving multiple baggage objects at a time:
 In a Sokoban game, player can at most move one baggage object. However, in BABA IS YOU, player can move multiple objects. Moving multiple baggage objects can be quite a challenge if we want to extend the method for checking baggage collisions in the Sokoban game, which returns true when only two baggage objects are in the way of the player. To solve this, checkbaggCollision method is implement in a recursive fashion: it recursively finds the next collided baggage object and returns true when the next collided baggage object collides with a wall (a terminating condition). If all baggage objects are movable (not touching any of the walls), move all the object recursively and return false.
 
 ## 4.	Accommodating the Additional Requirement
